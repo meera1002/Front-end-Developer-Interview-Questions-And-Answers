@@ -11,11 +11,12 @@ sometimes don't need to add event listeners for every element.
 
 #### Explain how `this` works in JavaScript
 
-*Not answered yet*
+The this object is bound at runtime based on the context in which a function is executed
 
 #### Explain how prototypal inheritance works
 
-*Not answered yet*
+Whenever a function is created, its prototype property is also created according to a specific set of rules. 
+When it comes to inheritance, JavaScript only has one construct: objects. Each object has an internal link to another object called its prototype. That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype. null, by definition, has no prototype, and acts as the final link in this prototype chain.
 
 #### What do you think of AMD vs CommonJS?
 
@@ -35,15 +36,17 @@ sometimes don't need to add event listeners for every element.
 #### What's the difference between a variable that is: `null`, `undefined` or undeclared?
 ###### How would you go about checking for any of these states?
 
-*Not answered yet*
+the undefined variable is a declared but has a value of undefined. To use a undeclared variable will cause an error.
 
 #### What is a closure, and how/why would you use one?
 
-*Not answered yet*
+Closures are functions that have access to variables from anthor function's scope. 
+This is often accomplished by creating a function inside a function.
 
 #### What's a typical use case for anonymous functions?
 
-*Not answered yet*
+event handler
+IIFE
 
 #### How do you organize your code? (module pattern, classical inheritance?)
 
@@ -61,11 +64,11 @@ sometimes don't need to add event listeners for every element.
 
 #### What's the difference between `.call` and `.apply`?
 
-*Not answered yet*
+These methods both call the function with a specific this value. * the apply() method accepts two arguments: the value of this and an array of arguments. * the call() method exhibits the same behavior as apply(),but arguments are passed to it differently.Using call() arguments must be enumerated specifically.
 
 #### Explain `Function.prototype.bind`.
 
-*Not answered yet*
+ECMAScript 5 defines an addition method called 'bind()'.the 'bind()' method create a new function instance whose this value is bound to the value to that was passed into 'bind()'.
 
 #### When would you use `document.write()`?
 
@@ -116,7 +119,21 @@ Handlebars, Mustache, etc.
 
 #### Explain "hoisting".
 
-*Not answered yet*
+There is a preproccess or precompile in javascript runtime. and 'Hoisting' occur in the preproccess.
+
+Function declarations and variable declarations are always moved (“hoisted”) invisibly to the top of their containing scope by the JavaScript interpreter. This means that code like this:
+
+function foo() {
+    bar();
+    var x = 1;
+}
+is actually interpreted like this:
+
+function foo() {
+    var x;
+    bar();
+    x = 1;
+}
 
 #### Describe event bubbling.
 
